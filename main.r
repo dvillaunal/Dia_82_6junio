@@ -1,34 +1,13 @@
-```{r, eval=FALSE, include=TRUE}
-"Protocolo:
- 1. Daniel Felipe Villa Rengifo
- 2. Lenguaje: R
- 3. Tema: Climadiagrama
- 4. Fuentes: Naïve Bayes con R 
-    https://rpubs.com/mao045/485540"
-```
-
-#  Naive Bayes- clasificación bayesiano ingenuo
-
-Naive Bayes es un modelo de predicción basado en la probabilidad Bayesiana. El modelo es muy simple, pero poderoso, en cuanto que es resultado directo de los datos y su tratamiento con simple estadística bayesiana de la probabilidad condicionada. Hay que tener en cuenta que se asume, por simplificación que las variables son todas sucesos independientes.
-
-La función de clasificación ingenua de bayes se encuentra en varias librerías de R en: `naivebayes`, en el paquete `e1071` y en otros.
+## ---- eval=FALSE, include=TRUE----------------------------------------------------
+## "Protocolo:
+##  1. Daniel Felipe Villa Rengifo
+##  2. Lenguaje: R
+##  3. Tema: Climadiagrama
+##  4. Fuentes: Naïve Bayes con R
+##     https://rpubs.com/mao045/485540"
 
 
-El modelo bayesiano de probabilidad condicionada se representa como: [`P(A|B) = P(A ∩ B)/ P(B)`], es decir, la probabilidad de que se de el caso `A` dado `B` es igual a la probabilidad de la intersección de `A` con `B`.
-
-Estirando esta formulación llegaríamos al teorema de Bayes cuya expresion más típica es la siguente:
-
-+ [`P(A|B) = P(B|A)*P(A) / P(B)`] <= __Teorema de Bayes__
-
-# Crear un modelo con `naivebayes`:
-
-La `tabla_1` que vamos a crear contiene 3 variables:
-
-1. la hora del día
-2. el lugar donde está Juan a esa hora
-3. otra columna que nos indica si es o no fin de semana con un valor lógico (TRUE o FALSE).
-
-```{r}
+## ---------------------------------------------------------------------------------
 #  CREAMOS UNA TABLA DE DATOS:
 
 # 1.
@@ -68,18 +47,9 @@ write.table(registrosHL, file = "registrosHL.txt", row.names = T)
 print(registrosHL)
 
 "Como vemos, es una tabla con 20 regisros y 3 variables en columnas, sobre la que queremos practicar pronósticos bayesianos de probabilidad condicionada."
-```
-
-# Pasos a Seguir:
-
-1. creamos la formula de modelo con la función `naive_bayes()` y luego definimos un hecho, una ocurrencia concreta de los parámetros y llamamos a la función `predict()`.
 
 
-> Nota: Esta función es común a la mayoría de los modelos de predictivos,
-> y sus argumentos son el nombre del modelo y un hecho almacenado como data.frame.
-> Si añadimos el argumento `type="prob` nos da el resultado como pronostico probabilistico y si no, solo el pronóstico más probable.
-
-```{r}
+## ---------------------------------------------------------------------------------
 # cargamos la librería
 #install.packages("naivebayes")
 library(naivebayes)
@@ -115,4 +85,3 @@ head(tabla_1)
 write.csv(tabla_1, file = "Base1.csv", row.names = F)
 
 "Aqui presentamos continuidad con las matrices de confusión y modelos de predictivos"
-```

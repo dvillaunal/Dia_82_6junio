@@ -1,3 +1,16 @@
+---
+title: "Dia_82_6junio"
+author: "Daniel Felipe Villa Rengifo"
+date: "9/6/2021"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
 ```{r, eval=FALSE, include=TRUE}
 "Protocolo:
  1. Daniel Felipe Villa Rengifo
@@ -116,3 +129,10 @@ write.csv(tabla_1, file = "Base1.csv", row.names = F)
 
 "Aqui presentamos continuidad con las matrices de confusión y modelos de predictivos"
 ```
+
+
+```{r}
+library(knitr)
+purl("Dia_82_6junio.Rmd", "main.r")
+```
+
